@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Employee {
 
@@ -14,16 +15,14 @@ public class Employee {
 	
 	
 	private String name;
+	
 	private String email;
 	private String address;
 	
 	public Employee() {
 		
 	}
-	
-	
-	
-	
+		
 	public Long getId() {
 		return id;
 	}

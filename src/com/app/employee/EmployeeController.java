@@ -3,8 +3,11 @@ package com.app.employee;
 import java.util.List;
 import java.util.Map;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,10 +46,14 @@ public class EmployeeController {
 	@RequestMapping(value="/save" , method=RequestMethod.POST)
 	public String saveEmployee(@ModelAttribute("employee") Employee employee)
 	{
-		service.save(employee);
+				
 		
-		return "redirect:/";
-	}
+			service.save(employee);
+		
+			return "redirect:/";
+		}
+		
+	
 	
 	@RequestMapping("/edit")
 	public ModelAndView editEmployeeForm(@RequestParam long id)
@@ -57,6 +64,7 @@ public class EmployeeController {
 		return mv;
 	}
 	
+	
 	@RequestMapping("/delete")
 	public String deleteEmployee(@RequestParam long id)
 	{
@@ -64,7 +72,5 @@ public class EmployeeController {
 		return "redirect:/";
 	}
 	
-	
-	
-	
+
 }
